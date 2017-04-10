@@ -4,8 +4,8 @@
     src: job.nomad
     dest: /tmp/
 
-- name: "Performing '{{ step | default('job') }}' on Nomad {{ nomad_bind_addr }}"
-  command: nomad run -address="http://{{ nomad_bind_addr }}:{{ nomad_ports_http }}" /tmp/job.nomad
+- name: "Performing '{{ step | default('job') }}' on Nomad server"
+  command: nomad run /tmp/job.nomad
   run_once: true
 
 - name: "wait {{ timeout | default(20) }}"
