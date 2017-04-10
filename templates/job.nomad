@@ -1,6 +1,8 @@
 job "{{ job }}" {
 	datacenters = ["dc1"]
 	priority = 50
+	type = "service"
+	region = "{{ region | default(defaults_region) }}"
 
 	group "blue" {
 	  count = {{ count_blue | default(defaults_count_blue) }}
@@ -20,6 +22,10 @@ job "{{ job }}" {
 				cpu = {{ cpu | default(defaults_cpu) }}
 				memory = {{ memory | default(defaults_memory) }}
 				network { mbits = 30 port "http" {} }
+			}
+			logs {
+				max_files     = 10
+				max_file_size = 20
 			}
 		}
 	}
@@ -42,6 +48,10 @@ job "{{ job }}" {
 				cpu = {{ cpu | default(defaults_cpu) }}
 				memory = {{ memory | default(defaults_memory) }}
 				network { mbits = 30 port "http" {} }
+			}
+			logs {
+				max_files     = 10
+				max_file_size = 20
 			}
 		}
 	}

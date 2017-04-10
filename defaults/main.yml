@@ -6,6 +6,7 @@ defaults_count_green: 0
 defaults_app_port: 8080
 defaults_cpu: 200
 defaults_memory: 256
+defaults_region: global
 
 version_old: latest
 version_new: latest
