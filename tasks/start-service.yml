@@ -1,0 +1,10 @@
+---
+- include: blue-green.yml
+  vars:
+    step: "Bring version {{ version_new }}"
+    count_blue:    "{{ defaults_count_blue_when_missing }}"
+    version_blue:  "{{ version_new }}"
+    tags_blue:     "{{ tags_active_with_version_new }}"
+    count_green:   "0"
+    version_green: "{{ version_new }}"
+    tags_green:    "{{ tags_active_with_version_new }}"
