@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - simple-blue-green-deploy
+      job: identity
+      image_name: djalexd/identity
+      

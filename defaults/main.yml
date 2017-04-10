@@ -1,0 +1,23 @@
+---
+
+defaults_count_blue: 1
+defaults_count_green: 0
+defaults_app_port: 8080
+defaults_cpu: 200
+defaults_memory: 256
+
+version_old: latest
+version_new: latest
+tags_active:
+  - service
+  - active
+tags_inactive:
+  - service
+tags_active_with_version_new:
+  - service
+  - active
+  - "{{ version_new }}"
+tags_active_with_version_old:
+  - service
+  - active
+  - "{{ version_old }}"
